@@ -3,15 +3,14 @@ package com.reliaquest.server.model;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NonNull;
+
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @Builder(toBuilder = true)
 @JsonNaming(MockEmployee.PrefixNamingStrategy.class)
+@NoArgsConstructor
 public class MockEmployee {
 
     private UUID id;
