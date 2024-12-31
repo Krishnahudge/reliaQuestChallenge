@@ -39,7 +39,6 @@ public class ApiV1Service {
         this.apiV1WebClient = apiV1WebClient;
     }
 
-    @SneakyThrows
     public List<MockEmployee> getAllEmployeeList(){
         Mono<DataBuffer> dataBufferMono = apiV1WebClient.get()
                 .exchangeToMono(clientResponse -> {
