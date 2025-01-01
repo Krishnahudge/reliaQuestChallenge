@@ -28,7 +28,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
     }
 
     @Override
-    @GetMapping
     public ResponseEntity<List<MockEmployee>> getAllEmployees() {
         try{
             List<MockEmployee> employeeList = apiV1Service.getAllEmployeeList();
@@ -39,7 +38,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
         }
     }
 
-    @GetMapping("/search/{searchString}")
     @Override
     public ResponseEntity<List<MockEmployee>> getEmployeesByNameSearch(@PathVariable("searchString") String searchString) {
         try{
@@ -53,7 +51,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
         }
     }
 
-    @GetMapping("/{id}")
     @Override
     public ResponseEntity<MockEmployee> getEmployeeById(@PathVariable("id") String id) {
         try{
@@ -64,7 +61,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
         }
     }
 
-    @GetMapping("/highestSalary")
     @Override
     public ResponseEntity<Integer> getHighestSalaryOfEmployees() {
         try{
@@ -79,7 +75,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
         }
     }
 
-    @GetMapping("/topTenHighestEarningEmployeeNames")
     @Override
     public ResponseEntity<List<String>> getTopTenHighestEarningEmployeeNames() {
         try{
@@ -97,7 +92,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
 
     }
 
-    @PostMapping()
     @Override
     public ResponseEntity<MockEmployee> createEmployee(@Valid @RequestBody CreateMockEmployeeInput employee) {
         try{
@@ -108,7 +102,6 @@ public class IEmployeeControllerImpl implements IEmployeeController<MockEmployee
         }
     }
 
-    @DeleteMapping("/{id}")
     @Override
     public ResponseEntity<String> deleteEmployeeById(@PathVariable String id) {
         try{
